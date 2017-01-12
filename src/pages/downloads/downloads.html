@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Downloads
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="grid-basic-page" padding>
+     <ion-card-content>
+          <button ion-button (click)="downloadFile()" 
+          color="secondary">Download File</button>
+
+           <button ion-button  (click)="unZipFile()" color="primary">Unzip File</button>
+     </ion-card-content>
+
+<div id="exportable">
+     <ion-row>
+    <ion-col  width-33><div>Name</div></ion-col>
+    <ion-col  width-33><div>Email</div></ion-col>
+    <ion-col  width-33><div>DOB</div></ion-col>
+  </ion-row>
+  <ion-row *ngFor="let item of items">
+    <ion-col  width-33><div>{{item.name}}</div></ion-col>
+    <ion-col  width-33><div>{{item.email}}</div></ion-col>
+    <ion-col  width-33><div>{{item.dob}}</div></ion-col>
+  </ion-row>
+</div>
+  <button ion-button small (click)="exportData()">Export data to Excel</button>
+ 
+</ion-content>
